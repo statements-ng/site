@@ -1,0 +1,134 @@
+---
+---
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  <!-- Background glow -->
+  <div class="glow-dot top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+  <!-- Grid pattern -->
+  <div
+    class="absolute inset-0 opacity-[0.04]"
+    style="background-image: linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(to right, #3b82f6 1px, transparent 1px); background-size: 64px 64px;"
+  ></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#1e2530] bg-[#0f1318] text-xs text-[#6b7a91] mb-8 font-mono">
+      <span class="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse"></span>
+      Nigerian Bank Statement Parser
+    </div>
+
+    <!-- Headline -->
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
+      <span class="gradient-text">Parse any Nigerian</span><br />
+      <span class="text-[#e8edf5]">bank statement.</span><br />
+      <span class="text-[#e8edf5]">In seconds.</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="text-lg md:text-xl text-[#6b7a91] max-w-2xl mx-auto mb-10 leading-relaxed">
+      Stop wasting hours manually reading through PDFs. Statements NG extracts, structures, and analyses transactions from every major Nigerian bank — automatically.
+    </p>
+
+    <!-- CTA buttons -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="https://app.statements.ng"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold text-base transition-all shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5"
+      >
+        Start Parsing Free
+        <svg class="group-hover:translate-x-0.5 transition-transform" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a
+        href="#how-it-works"
+        class="flex items-center gap-2 px-7 py-3.5 rounded-xl border border-[#1e2530] hover:border-[#2d3748] text-[#e8edf5] font-medium text-base transition-all hover:bg-[#0f1318]"
+      >
+        See how it works
+      </a>
+    </div>
+
+    <!-- Social proof stats -->
+    <div class="mt-16 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+      <div class="text-center">
+        <div class="text-2xl font-bold text-[#e8edf5]">10+</div>
+        <div class="text-xs text-[#6b7a91] mt-0.5 font-mono uppercase tracking-wider">Banks Supported</div>
+      </div>
+      <div class="w-px h-8 bg-[#1e2530] hidden sm:block"></div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-[#e8edf5]">&lt;2s</div>
+        <div class="text-xs text-[#6b7a91] mt-0.5 font-mono uppercase tracking-wider">Avg. Parse Time</div>
+      </div>
+      <div class="w-px h-8 bg-[#1e2530] hidden sm:block"></div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-[#e8edf5]">99.9%</div>
+        <div class="text-xs text-[#6b7a91] mt-0.5 font-mono uppercase tracking-wider">Accuracy</div>
+      </div>
+      <div class="w-px h-8 bg-[#1e2530] hidden sm:block"></div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-[#e8edf5]">₦10</div>
+        <div class="text-xs text-[#6b7a91] mt-0.5 font-mono uppercase tracking-wider">Per Page</div>
+      </div>
+    </div>
+
+    <!-- Terminal preview -->
+    <div class="mt-16 max-w-3xl mx-auto rounded-xl border border-[#1e2530] bg-[#0f1318] overflow-hidden shadow-2xl shadow-black/60 text-left">
+      <!-- Terminal bar -->
+      <div class="flex items-center gap-2 px-4 py-3 border-b border-[#1e2530] bg-[#090b0f]">
+        <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+        <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+        <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
+        <span class="ml-3 text-xs text-[#6b7a91] font-mono">statements.ng / output preview</span>
+      </div>
+      <!-- Table mock -->
+      <div class="overflow-x-auto p-5">
+        <table class="w-full text-sm font-mono">
+          <thead>
+            <tr class="text-[#6b7a91] text-xs uppercase tracking-wider">
+              <th class="text-left pb-3 pr-6">Date</th>
+              <th class="text-left pb-3 pr-6">Description</th>
+              <th class="text-right pb-3 pr-6">Debit (₦)</th>
+              <th class="text-right pb-3 pr-6">Credit (₦)</th>
+              <th class="text-right pb-3">Balance (₦)</th>
+            </tr>
+          </thead>
+          <tbody class="text-[#e8edf5]">
+            <tr class="border-t border-[#1e2530]/50 hover:bg-[#161b23]/60 transition-colors">
+              <td class="py-2.5 pr-6 text-[#6b7a91]">03 Apr 25</td>
+              <td class="py-2.5 pr-6">USSD/Transfer - Ngozi A.</td>
+              <td class="py-2.5 pr-6 text-right text-[#f87171]">25,000.00</td>
+              <td class="py-2.5 pr-6 text-right">—</td>
+              <td class="py-2.5 text-right">482,150.00</td>
+            </tr>
+            <tr class="border-t border-[#1e2530]/50 hover:bg-[#161b23]/60 transition-colors">
+              <td class="py-2.5 pr-6 text-[#6b7a91]">02 Apr 25</td>
+              <td class="py-2.5 pr-6">Salary - April 2025</td>
+              <td class="py-2.5 pr-6 text-right">—</td>
+              <td class="py-2.5 pr-6 text-right text-[#34d399]">750,000.00</td>
+              <td class="py-2.5 text-right">507,150.00</td>
+            </tr>
+            <tr class="border-t border-[#1e2530]/50 hover:bg-[#161b23]/60 transition-colors">
+              <td class="py-2.5 pr-6 text-[#6b7a91]">01 Apr 25</td>
+              <td class="py-2.5 pr-6">POS/Card - Shoprite VI</td>
+              <td class="py-2.5 pr-6 text-right text-[#f87171]">18,600.00</td>
+              <td class="py-2.5 pr-6 text-right">—</td>
+              <td class="py-2.5 text-right">57,150.00</td>
+            </tr>
+            <tr class="border-t border-[#1e2530]/50 hover:bg-[#161b23]/60 transition-colors">
+              <td class="py-2.5 pr-6 text-[#6b7a91]">31 Mar 25</td>
+              <td class="py-2.5 pr-6">NIP/Transfer - Emeka O.</td>
+              <td class="py-2.5 pr-6 text-right">—</td>
+              <td class="py-2.5 pr-6 text-right text-[#34d399]">200,000.00</td>
+              <td class="py-2.5 text-right">75,750.00</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="mt-4 flex items-center gap-2 text-xs text-[#6b7a91]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse"></span>
+          Parsed 47 transactions across 4 pages in 1.3s
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

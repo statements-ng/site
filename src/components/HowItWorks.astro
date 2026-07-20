@@ -1,0 +1,79 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Upload your statement',
+    body: 'Drop in any PDF bank statement from any supported Nigerian bank. We accept files from the last 10 years, regardless of how the bank\'s format has changed over time.',
+    tag: 'PDF Upload',
+  },
+  {
+    num: '02',
+    title: 'We parse and structure',
+    body: 'Our engine identifies your bank, selects the correct layout parser, and extracts every transaction — date, narration, debit, credit, and balance — with surgical precision.',
+    tag: 'Auto Detection',
+  },
+  {
+    num: '03',
+    title: 'Review, analyse, export',
+    body: 'Browse your structured data in a clean table, filter by date or amount, view spending breakdowns, and export to CSV, Excel or JSON with a single click.',
+    tag: 'Instant Output',
+  },
+];
+---
+
+<section id="how-it-works" class="relative py-28 px-6 border-t border-[#1e2530]/50">
+  <!-- Background accent -->
+  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.07)_0%,transparent_70%)] pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Left: text -->
+      <div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#1e2530] bg-[#0f1318] text-xs text-[#6b7a91] mb-5 font-mono">
+          How it works
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-[#e8edf5] mb-5">
+          Three steps to<br />
+          <span class="gradient-text">clean data.</span>
+        </h2>
+        <p class="text-[#6b7a91] text-lg mb-10 leading-relaxed">
+          No configuration, no learning curve. Upload a PDF and walk away with structured, analysis-ready financial data.
+        </p>
+        <a
+          href="https://app.statements.ng"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold text-sm transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35"
+        >
+          Try it now — it's free
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 7H12M8.5 3.5L12 7L8.5 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right: steps -->
+      <div class="flex flex-col gap-4">
+        {steps.map((step, i) => (
+          <div class="relative flex gap-5 p-5 rounded-xl border border-[#1e2530] bg-[#0f1318] hover:border-[#2d3748] transition-all group">
+            <!-- Connector line -->
+            {i < steps.length - 1 && (
+              <div class="absolute left-[2.35rem] top-full w-px h-4 bg-[#1e2530]"></div>
+            )}
+            <!-- Number -->
+            <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-[#161b23] border border-[#1e2530] flex items-center justify-center font-mono text-xs font-bold text-[#3b82f6]">
+              {step.num}
+            </div>
+            <div>
+              <div class="flex items-center gap-2.5 mb-1.5">
+                <h3 class="text-sm font-semibold text-[#e8edf5]">{step.title}</h3>
+                <span class="px-2 py-0.5 rounded-md bg-[#161b23] border border-[#1e2530] text-[10px] font-mono text-[#6b7a91] uppercase tracking-wider">{step.tag}</span>
+              </div>
+              <p class="text-sm text-[#6b7a91] leading-relaxed">{step.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

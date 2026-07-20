@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://statements.ng/sitemap-index.xml

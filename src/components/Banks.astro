@@ -1,0 +1,62 @@
+---
+// Bank list — logos will be replaced with actual SVG/PNG assets later
+// Each bank has a slug (for future logo file path) and a display name
+const banks = [
+  { slug: 'gtbank',       name: 'GTBank',         abbr: 'GTB' },
+  { slug: 'access',       name: 'Access Bank',    abbr: 'ACC' },
+  { slug: 'zenith',       name: 'Zenith Bank',    abbr: 'ZEN' },
+  { slug: 'uba',          name: 'UBA',            abbr: 'UBA' },
+  { slug: 'firstbank',    name: 'First Bank',     abbr: 'FBN' },
+  { slug: 'stanbic',      name: 'Stanbic IBTC',   abbr: 'STB' },
+  { slug: 'sterling',     name: 'Sterling Bank',  abbr: 'STL' },
+  { slug: 'fidelity',     name: 'Fidelity Bank',  abbr: 'FID' },
+  { slug: 'union',        name: 'Union Bank',     abbr: 'UNB' },
+  { slug: 'polaris',      name: 'Polaris Bank',   abbr: 'POL' },
+  { slug: 'wema',         name: 'Wema Bank',      abbr: 'WEM' },
+  { slug: 'keystone',     name: 'Keystone Bank',  abbr: 'KEY' },
+];
+
+// Duplicate for seamless infinite scroll
+const doubled = [...banks, ...banks];
+---
+
+<section id="banks" class="relative py-24 border-t border-[#1e2530]/50 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 mb-12 text-center">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#1e2530] bg-[#0f1318] text-xs text-[#6b7a91] mb-5 font-mono">
+      Supported Banks
+    </div>
+    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-[#e8edf5] mb-4">
+      Every major Nigerian bank.<br />
+      <span class="text-[#6b7a91]">Always up to date.</span>
+    </h2>
+    <p class="text-[#6b7a91] text-lg max-w-xl mx-auto">
+      We track statement format changes from every bank and update our parser automatically, so your exports never break.
+    </p>
+  </div>
+
+  <!-- Scroll strip with fade edges -->
+  <div class="relative">
+    <!-- Left fade -->
+    <div class="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-[#090b0f] to-transparent"></div>
+    <!-- Right fade -->
+    <div class="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-[#090b0f] to-transparent"></div>
+
+    <div class="overflow-hidden">
+      <div class="banks-strip py-2">
+        {doubled.map((bank) => (
+          <div class="flex-shrink-0 flex items-center gap-3 px-5 py-3.5 rounded-xl border border-[#1e2530] bg-[#0f1318] hover:border-[#2d3748] hover:bg-[#131820] transition-all cursor-default group">
+            <!-- Logo placeholder — replace src with /logos/{slug}.svg when available -->
+            <div class="w-9 h-9 rounded-lg bg-[#161b23] border border-[#1e2530] flex items-center justify-center flex-shrink-0 group-hover:border-[#2d3748] transition-colors">
+              <span class="text-[9px] font-mono font-bold text-[#3b82f6]">{bank.abbr}</span>
+            </div>
+            <span class="text-sm font-medium text-[#e8edf5] whitespace-nowrap">{bank.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <p class="text-center text-xs text-[#6b7a91] font-mono mt-8 px-6">
+    More banks added regularly — <a href="https://app.statements.ng" target="_blank" rel="noopener noreferrer" class="text-[#3b82f6] hover:underline">request your bank →</a>
+  </p>
+</section>

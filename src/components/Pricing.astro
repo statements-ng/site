@@ -1,0 +1,221 @@
+---
+const tiers = [
+  {
+    name: 'Starter',
+    pages: '1 – 500',
+    price: '₦10',
+    unit: '/page',
+    desc: 'Perfect for individuals, accountants, and small teams doing occasional statement analysis.',
+    features: [
+      'All supported banks',
+      'CSV & Excel export',
+      'Instant parsing',
+      'Transaction categorisation',
+      'Credits never expire',
+    ],
+    cta: 'Get started',
+    highlight: false,
+  },
+  {
+    name: 'Pro',
+    pages: '501 – 5,000',
+    price: '₦10',
+    unit: '/page',
+    desc: 'Ideal for lending businesses, auditors, and financial analysts processing high volumes daily.',
+    features: [
+      'Everything in Starter',
+      'JSON export & API access',
+      'Batch upload (multi-file)',
+      'Priority processing queue',
+      'Dedicated support',
+    ],
+    cta: 'Start parsing',
+    highlight: true,
+  },
+  {
+    name: 'Enterprise',
+    pages: '5,000+',
+    price: 'Custom',
+    unit: '',
+    desc: 'For fintechs, banks, and platforms with high-volume or white-label parsing requirements.',
+    features: [
+      'Everything in Pro',
+      'Volume discounts',
+      'SLA guarantees',
+      'Custom integrations',
+      'Dedicated account manager',
+    ],
+    cta: 'Contact us',
+    highlight: false,
+  },
+];
+---
+
+<section id="pricing" class="relative py-28 px-6 border-t border-[#1e2530]/50">
+  <!-- Glow -->
+  <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-[radial-gradient(ellipse,rgba(59,130,246,0.07)_0%,transparent_70%)] pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#1e2530] bg-[#0f1318] text-xs text-[#6b7a91] mb-5 font-mono">
+        Pricing
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-[#e8edf5] mb-4">
+        Simple, credit-based pricing.
+      </h2>
+      <p class="text-[#6b7a91] text-lg max-w-xl mx-auto">
+        Buy credits upfront and spend them at ₦10 per page. No subscriptions, no hidden fees, no expiry.
+      </p>
+    </div>
+
+    <!-- Pricing cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-20">
+      {tiers.map((tier) => (
+        <div class={`relative flex flex-col p-7 rounded-xl border transition-all ${tier.highlight ? 'border-[#3b82f6]/50 bg-[#0c1221] shadow-xl shadow-blue-500/10' : 'border-[#1e2530] bg-[#0f1318] hover:border-[#2d3748]'}`}>
+          {tier.highlight && (
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#3b82f6] text-white text-[10px] font-semibold uppercase tracking-wider font-mono shadow-lg shadow-blue-500/30">
+              Most Popular
+            </div>
+          )}
+          <div class="mb-5">
+            <h3 class="text-sm font-semibold text-[#e8edf5] mb-1">{tier.name}</h3>
+            <div class="text-[11px] font-mono text-[#6b7a91] mb-4">{tier.pages} pages / month</div>
+            <div class="flex items-end gap-1">
+              <span class={`text-4xl font-extrabold ${tier.highlight ? 'text-[#3b82f6]' : 'text-[#e8edf5]'}`}>{tier.price}</span>
+              {tier.unit && <span class="text-[#6b7a91] text-sm mb-1.5">{tier.unit}</span>}
+            </div>
+            <p class="text-sm text-[#6b7a91] mt-3 leading-relaxed">{tier.desc}</p>
+          </div>
+
+          <ul class="flex flex-col gap-2.5 mb-7 flex-1">
+            {tier.features.map((feat) => (
+              <li class="flex items-start gap-2.5 text-sm text-[#e8edf5]">
+                <svg class="flex-shrink-0 mt-0.5 text-[#10b981]" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {feat}
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="https://app.statements.ng"
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`w-full text-center py-3 rounded-lg font-semibold text-sm transition-all ${tier.highlight ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-lg shadow-blue-500/25' : 'border border-[#1e2530] hover:border-[#2d3748] text-[#e8edf5] hover:bg-[#161b23]'}`}
+          >
+            {tier.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Cost estimator -->
+    <div class="max-w-2xl mx-auto p-8 rounded-2xl border border-[#1e2530] bg-[#0f1318]">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold text-[#e8edf5] mb-2">Estimate your monthly cost</h3>
+        <p class="text-sm text-[#6b7a91]">Drag the slider to match your expected monthly page volume.</p>
+      </div>
+
+      <div class="space-y-8" id="estimator">
+        <!-- Pages label + value -->
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-[#6b7a91]">Pages per month</span>
+          <span class="font-mono font-bold text-[#e8edf5] text-lg" id="page-count">100</span>
+        </div>
+
+        <!-- Slider -->
+        <input
+          type="range"
+          id="page-slider"
+          min="1"
+          max="10000"
+          value="100"
+          step="1"
+          class="w-full"
+          aria-label="Pages per month"
+        />
+
+        <!-- Tick marks -->
+        <div class="flex justify-between text-[10px] font-mono text-[#6b7a91] -mt-4">
+          <span>1</span>
+          <span>2,500</span>
+          <span>5,000</span>
+          <span>7,500</span>
+          <span>10,000</span>
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-[#1e2530]"></div>
+
+        <!-- Result -->
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-xs text-[#6b7a91] font-mono uppercase tracking-wider mb-0.5">Estimated monthly cost</div>
+            <div class="text-xs text-[#6b7a91]">at ₦10 per page, credits never expire</div>
+          </div>
+          <div class="text-right">
+            <div class="text-3xl font-extrabold text-[#3b82f6] font-mono" id="cost-display">₦1,000</div>
+            <div class="text-[10px] text-[#6b7a91] font-mono mt-0.5" id="cost-sub">100 pages × ₦10</div>
+          </div>
+        </div>
+
+        <a
+          href="https://app.statements.ng"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full text-center py-3 rounded-xl bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold text-sm transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35"
+        >
+          Buy credits and get started
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const slider = document.getElementById('page-slider') as HTMLInputElement;
+  const pageCount = document.getElementById('page-count')!;
+  const costDisplay = document.getElementById('cost-display')!;
+  const costSub = document.getElementById('cost-sub')!;
+  const RATE = 10; // NGN per page
+
+  function formatNGN(amount: number): string {
+    if (amount >= 1_000_000) {
+      return `₦${(amount / 1_000_000).toFixed(2)}M`;
+    }
+    if (amount >= 1_000) {
+      return `₦${amount.toLocaleString('en-NG')}`;
+    }
+    return `₦${amount}`;
+  }
+
+  function update() {
+    const pages = parseInt(slider.value, 10);
+    const cost = pages * RATE;
+    pageCount.textContent = pages.toLocaleString('en-NG');
+    costDisplay.textContent = formatNGN(cost);
+    costSub.textContent = `${pages.toLocaleString('en-NG')} pages × ₦${RATE}`;
+
+    // Update slider fill
+    const pct = ((pages - 1) / (10000 - 1)) * 100;
+    slider.style.setProperty('--fill', `${pct}%`);
+  }
+
+  slider.addEventListener('input', update);
+  update();
+</script>
+
+<style>
+  input[type="range"] {
+    --fill: 1%;
+  }
+  input[type="range"]::-webkit-slider-track {
+    background: linear-gradient(to right, #3b82f6 var(--fill), #1e2530 var(--fill));
+  }
+  input[type="range"]::-moz-range-progress {
+    background: #3b82f6;
+    height: 4px;
+    border-radius: 2px;
+  }
+</style>

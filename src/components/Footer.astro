@@ -1,0 +1,63 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-[#1e2530]/50 bg-[#090b0f] py-14 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <a href="/" class="inline-flex items-center gap-2.5 mb-4">
+          <div class="w-7 h-7 rounded-md bg-[#3b82f6] flex items-center justify-center">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="1" width="8" height="10" rx="1.5" stroke="white" stroke-width="1.5"/>
+              <path d="M3.5 4.5H6.5M3.5 6.5H7.5M3.5 8.5H5.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="10.5" cy="10.5" r="2.5" fill="white"/>
+              <path d="M9.5 10.5L10.2 11.2L11.5 9.5" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="font-semibold text-[15px] tracking-tight text-[#e8edf5]">
+            Statements<span class="text-[#3b82f6]">NG</span>
+          </span>
+        </a>
+        <p class="text-sm text-[#6b7a91] leading-relaxed max-w-xs">
+          The fastest and most accurate Nigerian bank statement parser. Built in Nigeria, for Nigeria.
+        </p>
+      </div>
+
+      <!-- Product -->
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-widest text-[#6b7a91] font-mono mb-4">Product</h4>
+        <ul class="space-y-3">
+          <li><a href="#features" class="text-sm text-[#6b7a91] hover:text-[#e8edf5] transition-colors">Features</a></li>
+          <li><a href="#how-it-works" class="text-sm text-[#6b7a91] hover:text-[#e8edf5] transition-colors">How it works</a></li>
+          <li><a href="#banks" class="text-sm text-[#6b7a91] hover:text-[#e8edf5] transition-colors">Supported banks</a></li>
+          <li><a href="#pricing" class="text-sm text-[#6b7a91] hover:text-[#e8edf5] transition-colors">Pricing</a></li>
+          <li>
+            <a href="https://app.statements.ng" target="_blank" rel="noopener noreferrer" class="text-sm text-[#3b82f6] hover:text-[#60a5fa] transition-colors">
+              Open App →
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-widest text-[#6b7a91] font-mono mb-4">Legal</h4>
+        <ul class="space-y-3">
+          <li><a href="/privacy" class="text-sm text-[#6b7a91] hover:text-[#e8edf5] transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms" class="text-sm text-[#6b7a91] hover:text-[#e8edf5] transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-[#1e2530]/50">
+      <p class="text-xs text-[#6b7a91] font-mono">
+        © {year} Statements NG. All rights reserved.
+      </p>
+      <p class="text-xs text-[#6b7a91] font-mono">
+        Made with precision in 🇳🇬 Nigeria
+      </p>
+    </div>
+  </div>
+</footer>
