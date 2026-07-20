@@ -5,8 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://statements-ng.github.io',
-  base: '/site',
+  site: 'https://statements.ng',
   vite: {
     plugins: [tailwindcss()],
     server: {
